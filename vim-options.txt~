@@ -1,0 +1,125 @@
+aleph=224
+commentstring="%s
+endofline
+nohkmap
+matchtime=5
+printmbfont=
+showbreak=
+taglength=0
+virtualedit=
+noarabic
+nocompatible
+equalalways       nohkmapp              maxcombine=2        printoptions=     noshowcmd             tagrelative       novisualbell
+arabicshape
+concealcursor=
+equalprg=
+hlsearch
+maxfuncdepth=100
+prompt
+noshowfulltag         tagstack            warn
+noallowrevins         conceallevel=0    noerrorbells        noicon                maxmapdepth=1000    pumheight=0         showmatch         notermbidi          noweirdinvert
+noaltkeymap           completefunc=       esckeys             iconstring=         maxmem=2019810      quoteescape=\       showmode            termencoding=       wildchar=<Tab>
+ambiwidth=single
+noconfirm
+eventignore=
+ignorecase
+maxmemtot=2019810
+noreadonly
+showtabline=1
+noterse
+wildcharm=0
+noautochdir
+nocopyindent
+noexpandtab
+iminsert=0
+menuitems=25
+redrawtime=2000
+sidescroll=0
+textauto
+wildignore=
+noautoindent          cpoptions=aABceFs noexrc                imsearch=0          modeline            regexpengine=0      sidescrolloff=0   notextmode          nowildignorecase
+noautoread            cryptmethod=zip     fileformat=unix     includeexpr=        modelines=5       norelativenumber      smartcase           textwidth=78        wildmenu
+noautowrite           cscopepathcomp=0  nofileignorecase      incsearch           modifiable          remap             nosmartindent         thesaurus=          wildoptions=
+noautowriteall        cscopeprg=cscope    filetype=vim      noinfercase         nomodified            report=2          nosmarttab          notildeop             window=43
+  background=dark     cscopequickfix=   nofkmap             noinsertmode          more              norevins              softtabstop=0       timeout             winheight=1
+  backup            nocscoperelative      foldclose=          isprint=@,161-255   mouse=a           norightleft         nospell               timeoutlen=1000   nowinfixheight
+  backupcopy=auto   nocscopetag           foldcolumn=0        joinspaces          mousemodel=extend   ruler               spellfile=        notitle             nowinfixwidth
+  backupext=~         cscopetagorder=0    foldenable          key=                mousetime=500       rulerformat=        spelllang=en        titlelen=85         winminheight=1
+  backupskip=/tmp/* nocscopeverbose       foldexpr=0          keymap=             number              scroll=21           spellsuggest=best   titlestring=        winminwidth=1
+nobinary            nocursorbind          foldignore=#        keymodel=           numberwidth=4     noscrollbind        nosplitbelow        nottimeout            winwidth=20
+nobomb              nocursorcolumn        foldlevel=0         keywordprg=man      omnifunc=           scrolljump=5      nosplitright          ttimeoutlen=-1      wrap
+  bufhidden=        nocursorline          foldlevelstart=-1   langmap=            operatorfunc=       scrolloff=3         startofline         ttybuiltin          wrapmargin=0
+  buflisted           debug=              foldmethod=manual   langmenu=         nopaste             nosecure              statusline=         ttyfast             wrapscan
+  buftype=          nodelcombine          foldminlines=1      laststatus=1        pastetoggle=        selectmode=         suffixesadd=        ttymouse=xterm2     write
+  cdpath=,,           dictionary=         foldnestmax=20    nolazyredraw          patchexpr=          shell=/bin/bash     swapfile            ttyscroll=999     nowriteany
+  cedit=^F          nodiff                formatexpr=       nolinebreak           patchmode=          shellcmdflag=-c     swapsync=fsync      undodir=.           writebackup
+  charconvert=        diffexpr=           formatprg=          lines=44          nopreserveindent      shellquote=         switchbuf=        noundofile            writedelay=0
+nocindent             diffopt=filler      fsync             nolisp                previewheight=12    shelltemp           synmaxcol=3000      undolevels=1000
+  cinoptions=       nodigraph           nogdefault            list              nopreviewwindow       shellxquote=        syntax=vim          undoreload=10000
+  cmdheight=1         display=            helpheight=20       loadplugins         printdevice=        shellxescape=       tabline=            updatecount=200
+  cmdwinheight=7      eadirection=both    helplang=en         magic               printencoding=    noshiftround          tabpagemax=10       updatetime=4000
+  colorcolumn=      noedcompatible      nohidden              makeef=             printfont=courier   shiftwidth=8        tabstop=8           verbose=0
+  columns=180         encoding=utf-8      history=1000        makeprg=make        printmbcharset=   noshortname           tagbsearch          verbosefile=
+  backspace=indent,eol,start
+  backupdir=.,~/tmp,~/
+  breakat= ^I!@*-+;:,./?
+  casemap=internal,keepascii
+  cinkeys=0{,0},0),:,0#,!^F,o,O,e
+  cinwords=if,else,while,do,for,switch
+  comments=sO:" -,mO:"  ,eO:"",:"
+  complete=.,w,b,u,t,i
+  completeopt=menu,preview
+  define=^\s*#\s*define
+  directory=.,~/tmp,/var/tmp,/tmp
+  errorfile=errors.err
+  errorformat=%*[^"]"%f"%*\D%l: %m,"%f"%*\D%l: %m,%-G%f:%l: (Each undeclared identifier is reported only once,%-G%f:%l: for each function it appears in.),%-GIn file included from %f:%l:%c:,%-GIn file included from %f:%l:%c\,,%-GIn file included from %f:%l:%c,%-GIn file included from %f:%l,%-G%*[ ]from %f:%l:%c,%-G%*[ ]from %f:%l:,%-G%*[ ]from %f:%l\,,%-G%*[ ]from %f:%l,%f:%l:%c:%m,%f(%l):%m,%f:%l:%m,"%f"\, line %l%*\D%c%*[^ ] %m,%D%*\a[%*\d]: Entering directory `%f',%X%*\a[%*\d]: Leaving directory `%f',%D%*\a: Entering directory `%f',%X%*\a: Leaving directory `%f',%DMaking %*\a in %f,%f|%l| %m
+  fileencoding=utf-8
+  fileencodings=ucs-bom,utf-8,latin1
+  fileformats=unix,dos
+  fillchars=vert:|,fold:-
+  foldmarker={{{,}}}
+  foldopen=block,hor,mark,percent,quickfix,search,tag,undo
+  foldtext=foldtext()
+  formatoptions=croql
+  formatlistpat=^\s*\d\+[\]:.)}\t ]\s*
+  grepformat=%f:%l:%m,%f:%l%m,%f  %l%m
+  grepprg=grep -n $* /dev/null
+  guicursor=n-v-c:block,o:hor50,i-ci:hor15,r-cr:hor30,sm:block,a:blinkon0
+  helpfile=/usr/share/vim/vim74/doc/help.txt
+  highlight=8:SpecialKey,@:NonText,d:Directory,e:ErrorMsg,i:IncSearch,l:Search,m:MoreMsg,M:ModeMsg,n:LineNr,N:CursorLineNr,r:Question,s:StatusLine,S:StatusLineNC,c:VertSplit,t:Title,v:Visual,V:VisualNOS,w:WarningMsg,W:WildMenu,f:Folded,F:FoldColumn,A:DiffAdd,C:DiffChange,D:DiffDelete,T:DiffText,>:SignColumn,-:Conceal,B:SpellBad,P:SpellCap,R:SpellRare,L:SpellLocal,+:Pmenu,=:PmenuSel,x:PmenuSbar,X:PmenuThumb,*:TabLine,#:TabLineSel,_:TabLineFill,!:CursorColumn,.:CursorLine,o:ColorColumn
+  include=^\s*#\s*include
+  indentexpr=GetVimIndent()
+  indentkeys=0{,0},:,0#,!^F,o,O,e,=end,=else,=cat,=fina,=END,0\
+  isfname=@,48-57,/,.,-,_,+,,,#,$,%,~,=
+  isident=@,48-57,_,192-255
+  iskeyword=@,48-57,_,192-255,#
+  lispwords=defun,define,defmacro,set!,lambda,if,case,let,flet,let*,letrec,do,do*,define-syntax,let-syntax,letrec-syntax,destructuring-bind,defpackage,defparameter,defstruct,deftype,defvar,do-all-symbols,do-external-symbols,do-symbols,dolist,dotimes,ecase,etypecase,eval-when,labels,macrolet,multiple-value-bind,multiple-value-call,multiple-value-prog1,multiple-value-setq,prog1,progv,typecase,unless,unwind-protect,when,with-input-from-string,with-open-file,with-open-stream,with-output-to-string,with-package-iterator,define-condition,handler-bind,handler-case,restart-bind,restart-case,with-simple-restart,store-value,use-value,muffle-warning,abort,continue,with-slots,with-slots*,with-accessors,with-accessors*,defclass,defmethod,print-unreadable-object
+  listchars=tab:› ,trail:•,extends:#,nbsp:.
+  matchpairs=(:),{:},[:]
+  maxmempattern=1000
+  mkspellmem=460000,2000,500
+  nrformats=octal,hex
+  paragraphs=IPLPPPQPP TPHPLIPpLpItpplpipbp
+  path=.,/usr/include,,
+  printexpr=system('lpr' . (&printdevice == '' ? '' : ' -P' . &printdevice) . ' ' . v:fname_in) . delete(v:fname_in) + v:shell_error
+  printheader=%<%f%h%m%=Page %N
+  rightleftcmd=search
+  runtimepath=~/.vim,/usr/share/vim/vimfiles,/usr/share/vim/vim74,/usr/share/vim/vimfiles/after,~/.vim/after
+  scrollopt=ver,jump
+  sections=SHNHH HUnhsh
+  selection=inclusive
+  sessionoptions=blank,buffers,curdir,folds,help,options,tabpages,winsize
+  shellpipe=2>&1| tee
+  shellredir=>%s 2>&1
+  shortmess=filnxtToO
+  spellcapcheck=[.?!]\_[\])'"^I ]\+
+  suffixes=.bak,~,.o,.h,.info,.swp,.obj
+  tags=./tags,./TAGS,tags,TAGS
+  term=xterm-256color
+  titleold=Thanks for flying Vim
+  ttytype=xterm-256color
+  viewdir=~/.vim/view
+  viewoptions=folds,options,cursor
+  viminfo='100,<50,s10,h
+  whichwrap=b,s,h,l,<,>,[,]
+  wildmode=list:longest,full
