@@ -36,17 +36,19 @@ while(<STDIN>) {
 		$lc = 1;
 		next;
 	}
-	if ($lc == 1 and $line =~ /^\t{4,}/) {
-		$options{$latest}[0] .= $_;
-	} elsif ($lc == 1 and $line =~ /^\t{3,}/) {
+	#if ($lc == 1 and $line =~ /^\t+/ and $line !~ /(global$|local to)/) {
+	#	$_ =~ s/^\s+/ /;
+	#	$options{$latest}[0] .= $_;
+	#} elsif ($lc == 1 and $line =~ /^\t+/) {
+	if ($lc == 1 and $line =~ /^\t{3,}/) {
 		$all_lc++;
 		# If the short description extends to 2nd line
-		if ($all_lc == 2 and $line =~ /\)$/) {
-			$options{$latest}[0] .= $_;
-		} else {
+		#if ($all_lc == 2 and $line =~ /\)$/) {
+		#	$options{$latest}[0] .= $_;
+		#} else {
 			# Main options and their sub-options come here
 			$optdata .= $_;
-		}
+			#}
 	} elsif (defined $latest) {
 		$all_lc++;
 		$lc++;
