@@ -14,7 +14,7 @@ PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8"
 );
 $pdo = new PDO('mysql:host=127.0.0.1;dbname=vim_db', 'root', '', $attrs);
 if (!isset($_GET['id'])) {
-	$statement = $pdo->query( 'SELECT option, short_desc, data_type from vim_options');
+	$statement = $pdo->query( 'SELECT * from vim_options');
 	$arr = $statement->fetchAll(PDO::FETCH_ASSOC);
 	$json = array();
 	foreach ( $arr as $row) {

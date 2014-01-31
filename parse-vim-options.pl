@@ -32,8 +32,8 @@ while(<STDIN>) {
 		$all_lc = 1;
 		$optdata= "";
 		$latest = $1;
-		#  Short, Long, IsGlobal, IsLocalFile, IsLocalBuffer, NotInVi, RequiredFeature
-		$options{$latest} = [$2, "", 0, 0, 0, 0, ""];
+		#  Short, Long, IsGlobal, IsLocalFile, IsLocalBuffer, NotInVi, RequiredFeature, DataType, DataTypeValues
+		$options{$latest} = [$2, "", 0, 0, 0, 0, "", $2, $3];
 		$lc = 1;
 		next;
 	}
@@ -108,7 +108,7 @@ foreach my $opt (keys %options) {
 	# Generate the datatype and its values
 	my ($datatype, $datatype_values) = ($s =~ /^(.*?)\((.*?)\)/);
 	$datatype =~ s/\s+// if defined $datatype;
-	$datatype_values =~ s/\t+/ /g if defined $datatype_values;
+	$datatype_values =~ s/\s+/ /g if defined $datatype_values;
 	# Generate the CSV of option and its types
 	my $opt_csv = $opt;
 	$opt_csv =~ s/'//g;
@@ -125,7 +125,8 @@ foreach my $opt (keys %options) {
 	}
 	# Remove the next section heading from full text
 	$fulltext =~ s/\t+\*'\w+'\* \*'\w+'\*//g;
-	$sth->execute($opt_csv, $short_text, $datatype, $datatype_values, $fulltext, $options{$opt}[2], $options{$opt}[3], $options{$opt}[4], $options{$opt}[5], $options{$opt}[6]) || die $!;
+	#$sth->execute($opt_csv, $short_text, $datatype, $datatype_values, $fulltext, $options{$opt}[2], $options{$opt}[3], $options{$opt}[4], $options{$opt}[5], $options{$opt}[6]) || die $!;
+	$sth->execute($opt_csv, $short_text, $options{$opt}[7], $options{$opt}[8], $fulltext, $options{$opt}[2], $options{$opt}[3], $options{$opt}[4], $options{$opt}[5], $options{$opt}[6]) || die $!;
 	if (defined $ENV{ON_SCREEN}) {
 		print("========= $opt =========");
 		printf("Option           : %s\n", $opt);

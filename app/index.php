@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="static/examples.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="static/cover.css">
+    <link rel="stylesheet" href="static/styles.css">
   </head>
   <body>
     <div class="container">
@@ -29,8 +30,9 @@
   <script src="static/typeahead.min.js"></script>
   <script>
 var template = Hogan.compile([
-	'<h2 class="example-title">Help For: {{option}}</h2>',
-	'<br>',
+	'<div class="panel panel-info">',
+	'<div class="panel-heading"><div class="panel-title">Help For: {{option}}</div></div>',
+	'<div class="panel-body">',
 	'<table class="table table-bordered">',
 	'<tr><th>Short Description</th><td>{{short_desc}}</td></tr>',
 	'<tr><th>Scope: Global</th><td>{{{is_global}}}</td></tr>',
@@ -40,7 +42,9 @@ var template = Hogan.compile([
 	'<tr><th>Datatype</th><td>{{data_type}}</td></tr>',
 	'<tr><th>Datatype Values</th><td>{{data_type_values}}</td></tr>',
 	'<tr><th>Long Description</th><td>{{{long_desc}}}</td></tr>',
-	'</table>'
+	'</table>',
+	'</div>',
+	'</div>',
 ].join(''));
 $('.example-twitter-oss .typeahead').typeahead({
   name: 'twitter-oss',
