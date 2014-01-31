@@ -108,7 +108,7 @@ p {
   width: 422px;
   margin-top: 12px;
   padding: 8px 0;
-  background-color: #0098cf;
+  background-color: #272822;
   border: 1px solid #ccc;
   border: 1px solid rgba(0, 0, 0, 0.2);
   -webkit-border-radius: 8px;
@@ -153,10 +153,12 @@ p {
 .example-twitter-oss .repo-language {
   float: right;
   font-style: italic;
+  color: #4da74d;
 }
 
 .example-twitter-oss .repo-name {
   font-weight: bold;
+  color: #a7b3bc;
 }
 
 .example-twitter-oss .repo-description {
