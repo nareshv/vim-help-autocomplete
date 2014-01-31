@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>typeahead.js – examples</title>
+    <title>VIM - Help Index</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="http://twitter.com/favicons/favicon.ico">
     <link rel="stylesheet" href="static/examples.css">
