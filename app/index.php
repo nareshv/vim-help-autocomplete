@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="static/styles.css">
   </head>
   <body>
-    <div class="container">
+    <div class="container-fluid">
       <div class="example example-twitter-oss">
         <h2 class="example-name"><img src="static/64.png"> VIM - Help Index</h2>
         <p class="example-description">Online Help for various VIM Options</p>
@@ -31,7 +31,7 @@
   <script>
 var template = Hogan.compile([
 	'<div class="panel panel-info">',
-	'<div class="panel-heading"><div class="panel-title">Help For: {{option}}</div></div>',
+	'<div class="panel-heading"><div class="panel-title">Help For: {{vim_option}}</div></div>',
 	'<div class="panel-body">',
 	'<table class="table table-bordered">',
 	'<tr><th>Short Description</th><td>{{short_desc}}</td></tr>',
@@ -41,7 +41,7 @@ var template = Hogan.compile([
 	'<tr><th>Required Features</th><td>{{req_feature}}</td></tr>',
 	'<tr><th>Datatype</th><td>{{data_type}}</td></tr>',
 	'<tr><th>Datatype Values</th><td>{{data_type_values}}</td></tr>',
-	'<tr><th>Long Description</th><td>{{{long_desc}}}</td></tr>',
+	'<tr><th>Long Description</th><td><pre>{{{long_desc}}}</pre></td></tr>',
 	'</table>',
 	'</div>',
 	'</div>',

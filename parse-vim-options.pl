@@ -6,11 +6,11 @@ use Data::Dumper;
 use DBI;
 
 my $dbh = DBI->connect('dbi:mysql:vim_db;host=127.0.0.1','root') or die "$DBI::errstr\n";
-my $sql = "CREATE TABLE IF NOT EXISTS vim_options (id integer auto_increment primary key, option varchar(200) unique, short_desc text DEFAULT NULL, data_type varchar(64) default null, data_type_values varchar(200) default null, long_desc text DEFAULT NULL, is_global tinyint(1) DEFAULT NULL, local_to_window tinyint(1) DEFAULT NULL, local_to_buffer tinyint(1) DEFAULT NULL, not_in_vi tinyint(1) DEFAULT NULL, req_feature varchar(200) DEFAULT NULL, added_at datetime, updated_at datetime, index (`data_type`), index (`req_feature`)) charset=latin1";
+my $sql = "CREATE TABLE IF NOT EXISTS vim_options (id integer auto_increment primary key, vim_option varchar(200) unique, short_desc text DEFAULT NULL, data_type varchar(64) default null, data_type_values varchar(200) default null, long_desc text DEFAULT NULL, is_global tinyint(1) DEFAULT NULL, local_to_window tinyint(1) DEFAULT NULL, local_to_buffer tinyint(1) DEFAULT NULL, not_in_vi tinyint(1) DEFAULT NULL, req_feature varchar(200) DEFAULT NULL, added_at datetime, updated_at datetime, index (`data_type`), index (`req_feature`)) charset=latin1";
 $dbh->do($sql) || die "$!";
-my $sth = $dbh->prepare( "INSERT into vim_options set option = ?, short_desc = ?, data_type = ?, data_type_values = ?, long_desc = ?, is_global = ?, local_to_window = ?, local_to_buffer = ?, not_in_vi = ?, req_feature = ?, added_at = now() on duplicate key update updated_at = now()");
+my $sth = $dbh->prepare( "INSERT into vim_options set vim_option = ?, short_desc = ?, data_type = ?, data_type_values = ?, long_desc = ?, is_global = ?, local_to_window = ?, local_to_buffer = ?, not_in_vi = ?, req_feature = ?, added_at = now() on duplicate key update updated_at = now()");
 
-# 
+#
 # Program to scan the options.txt.gz and generate
 # documentation which is useful for building options
 # online.
@@ -24,10 +24,19 @@ my $optdata = "";
 my $all_lc  = 0;
 my %tmpbuf  = ();
 my $shdesc_ended = 0;
+my $emptyline = 0;
 
 while(<STDIN>) {
 	$line = $_;
-	#if ($line =~ /^('.*?)\t+([a-z].*)$/) {
+	# Try to skip the headers and detect the section
+	if ($line =~ /^$/) {
+		$emptyline = 1;
+	}
+	if ($emptyline == 1) {
+		$emptyline = 0;
+		next;
+	}
+	# Beginning of the section happens here
 	if ($line =~ /^('.*?')\s+(string|boolean|number)\s+(.*)/i) {
 		$all_lc = 1;
 		$optdata= "";
@@ -124,7 +133,7 @@ foreach my $opt (keys %options) {
 		$short_text = $1;
 	}
 	# Remove the next section heading from full text
-	$fulltext =~ s/\t+\*'\w+'\* \*'\w+'\*//g;
+	$fulltext =~ s/\s+\*'.*'\*//g;
 	#$sth->execute($opt_csv, $short_text, $datatype, $datatype_values, $fulltext, $options{$opt}[2], $options{$opt}[3], $options{$opt}[4], $options{$opt}[5], $options{$opt}[6]) || die $!;
 	$sth->execute($opt_csv, $short_text, $options{$opt}[7], $options{$opt}[8], $fulltext, $options{$opt}[2], $options{$opt}[3], $options{$opt}[4], $options{$opt}[5], $options{$opt}[6]) || die $!;
 	if (defined $ENV{ON_SCREEN}) {

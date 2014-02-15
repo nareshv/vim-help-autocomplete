@@ -18,12 +18,12 @@ if (!isset($_GET['id'])) {
 	$arr = $statement->fetchAll(PDO::FETCH_ASSOC);
 	$json = array();
 	foreach ( $arr as $row) {
-		$json[] = array('name' => $row['option'], 'description' => $row['short_desc'], 'language' => $row['data_type'], 'value' => $row['option'], 'tokens' => split(',', $row['option']));
+		$json[] = array('name' => $row['vim_option'], 'description' => $row['short_desc'], 'language' => $row['data_type'], 'value' => $row['vim_option'], 'tokens' => split(',', $row['vim_option']));
 	}
 	header("Content-Type: application/json");
 	echo json_encode($json);
 } else {
-	$statement = $pdo->query( "SELECT * from vim_options where option = '".$_REQUEST['id']."'");
+	$statement = $pdo->query( "SELECT * from vim_options where vim_option = '".$_REQUEST['id']."'");
 	$arr = $statement->fetchAll(PDO::FETCH_ASSOC);
 	$json = array();
 	foreach ( $arr as $row) {
