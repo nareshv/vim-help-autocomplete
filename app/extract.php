@@ -36,5 +36,11 @@ $matches = array();
 
 preg_match_all('/(```.*?```)/ims', $data, $matches);
 
+$trimmed = array();
+
+foreach($matches[0] as $m) {
+    $trimmed[] = str_replace('```', '', $m);
+}
+
 header("Content-Type: application/json");
-echo json_encode(array('r' => $matches[0]));
+echo json_encode(array('r' => $trimmed));

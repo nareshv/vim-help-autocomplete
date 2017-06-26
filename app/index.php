@@ -61,5 +61,9 @@ $('.example-twitter-oss .typeahead').typeahead({
 	});
 });
   </script>
+  <footer id="footer">
+    &copy 2014 Naresh.<br>
+    License: <b>None</b>
+  </footer>
   </body>
 </html>
