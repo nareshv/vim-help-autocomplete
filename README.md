@@ -6,6 +6,7 @@ Make the vim help documentation available via web server in a simple & searchabl
 
 ![Screenshot 1](https://raw.githubusercontent.com/nareshv/vim-help-autocomplete/master/screenshots/1.png)
 ![Screenshot 2](https://raw.githubusercontent.com/nareshv/vim-help-autocomplete/master/screenshots/2.png)
+![Screenshot 3](https://raw.githubusercontent.com/nareshv/vim-help-autocomplete/master/screenshots/3.png)
 
 Getting Started
 ===============
